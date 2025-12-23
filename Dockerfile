@@ -1,8 +1,18 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
+
+# Устанавливаем Tkinter
 RUN apt-get update && apt-get install -y \
     python3-tk \
+    tk-dev \
     && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
-COPY main.py .
-COPY guiModule.py .
-CMD ["python", "main.py"]
+
+# Копируем и устанавливаем зависимости
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Копируем исходный код
+COPY src/ ./src/
+
+CMD ["python", "src/main.py"]
