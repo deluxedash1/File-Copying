@@ -20,8 +20,7 @@ file-copying/
 ├── requirements.txt
 
 # Локальный запуск
-Запуск производится через файл run.bat или можно запустить самому
-run.bat требует установки VcXsrv, альтернативно можно запустить файл main.py в папке src
+Запуск производится через файл run.bat, но требует установки VcXsrv, альтернативно можно запустить файл main.py в папке src
 
 # Запуск через Docker (Linux)
 docker build -t file-copy-app .
