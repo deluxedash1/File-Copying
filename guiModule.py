@@ -12,22 +12,19 @@ class FileCopyApp:
         self.root.geometry("1000x800")
         self.root.configure(bg="#f5f5f5")
 
-        # Иконка окна (если есть)
+        # иконка окна (если есть)
         try:
             self.root.iconbitmap("copy_icon.ico")
         except:
             pass
 
-        # Переменные
+        # переменные
         self.source_path = tk.StringVar()
         self.destination_path = tk.StringVar()
         self.copy_mode = tk.StringVar(value="single")  # single или multiple
         self.operation_in_progress = False
 
-        # Создание интерфейса
         self.create_widgets()
-
-        # Центрирование окна
         self.center_window()
 
     def center_window(self): # центрирование окна на экране
