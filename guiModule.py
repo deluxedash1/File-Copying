@@ -15,7 +15,7 @@ class FileCopyApp:
         # переменные
         self.source_path = tk.StringVar()
         self.destination_path = tk.StringVar()
-        self.copy_mode = tk.StringVar(value="single")  # single или multiple
+        self.copy_mode = tk.StringVar(value="single")
         self.operation_in_progress = False
 
         self.create_widgets()
@@ -407,3 +407,4 @@ class FileCopyApp:
         self.copy_button.config(state="normal", text="Начать копирование")
 
         self.update_status("Готово к работе")
+
